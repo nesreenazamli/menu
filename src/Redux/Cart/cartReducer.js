@@ -1,10 +1,8 @@
-import {
-  ADD_TO_CART,
-} from "./cartTypesConstants";
+import { ADD_TO_CART } from "./cartTypesConstants";
 
 export const cartReducer = (
   initialState = {
-    Data: [],
+    cart: [],
   },
   action
 ) => {
@@ -12,7 +10,7 @@ export const cartReducer = (
     case ADD_TO_CART:
       return {
         ...initialState,
-        Data: [action.payload],
+        cart: action.payload,
       };
 
     default:

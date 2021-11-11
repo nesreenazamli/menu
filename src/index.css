@@ -5,8 +5,8 @@
   direction: rtl;
   text-decoration: none;
 }
-a{
-  color:#4a4a4a;
+a {
+  color: #4a4a4a;
   font-weight: 500;
 }
 body {
@@ -60,8 +60,22 @@ code {
   justify-content: space-between;
 }
 
-.bg-scroll{
+.bg-scroll {
   background: #000;
-    padding: 4px 20px;
-    color: #fff;
+  padding: 4px 20px;
+  color: #fff;
+}
+.kep-login-facebook.metro{
+    padding: 11px 13px !important;
+    margin-right: 10px !important;
+    background-color: none ;
+   box-shadow:rgb(0 0 0 / 24%) 0px 2px 2px 0px !important;
+   border-radius: 2px !important;
+   font-weight: 400 !important;
+}
+.C-pointer{
+  cursor: pointer;
+}
+.pos{
+  position: fixed;
 }

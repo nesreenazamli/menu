@@ -35,6 +35,18 @@ export default function Meals() {
         title: "بيتزا خضار",
         price: "$25",
       },
+      {
+        id: "6",
+        image: CardImage,
+        title: "بيتزا خضار",
+        price: "$25",
+      },
+      {
+        id: "7",
+        image: CardImage,
+        title: "بيتزا خضار",
+        price: "$25",
+      },
   ];
 
   return (

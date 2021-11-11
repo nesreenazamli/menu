@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../Redux/User/userActions";
 // import PersonIcon from "@material-ui/icons/Person";
+import { FaUserAlt } from 'react-icons/fa'
 
 export default function NavBar() {
   const { user } = useSelector((state) => state);
@@ -27,7 +28,7 @@ export default function NavBar() {
 
       {!Object.entries(user.email).length ? (
         <NavText to={"/signin"}>
-          {/* <PersonIcon /> */}
+         <FaUserAlt style={{margin:"-2px 1px -2px 6px"}} />
           تسجيل دخول
         </NavText>
       ) : (

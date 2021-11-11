@@ -10,35 +10,39 @@ import {
 import CounterComponent from "../Counter/Counter";
 import { addCartItem } from "../../Redux/Cart/cartActions";
 import { useDispatch } from "react-redux";
+import { FaTrash } from "react-icons/fa";
 
-export default function Cards(props) {
+export default function Cards({ id, price, image, title }) {
   const [count, setCount] = useState(1);
   const [isShow, setIsShow] = useState(true);
 
   const dispatch = useDispatch();
   return (
     <CardContainer>
-      <CardImg src={props.image} />
-      <Typography style={{ margin: "10px 0" }}>{props.title}</Typography>
+      <CardImg src={image} />
+      <Typography style={{ margin: "10px 0" }}>{title}</Typography>
 
       <FlexBox style={{ justifyContent: "space-between", width: "100%" }}>
         <Typography fontWeight={"bold"} style={{ margin: "5px 0 0 0" }}>
-          {props.price}
+          {price}
         </Typography>
         {isShow ? (
           <CounterBtn
             onClick={() => {
-              setIsShow(false) 
-              && dispatch(addCartItem())
+              setIsShow(false) &&
+                dispatch(addCartItem({ id, title, price, count: 1 }));
             }}
           >
+            <AddBtn fontWeight={"bold"}>+</AddBtn>
             <Typography fontWeight={"bold"}>إضافة </Typography>
-            <AddBtn onClick={() => {}} fontWeight={"bold"}>
-              +
-            </AddBtn>
           </CounterBtn>
         ) : (
-          <CounterComponent /> 
+          <FlexBox>
+            <FaTrash
+              style={{ color: "red", margin: "9px", cursor: "pointer" }}
+            />
+            <CounterComponent />
+          </FlexBox>
         )}
       </FlexBox>
     </CardContainer>

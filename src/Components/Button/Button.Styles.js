@@ -8,7 +8,7 @@ export const CustomeButton=styled(Link)`
     background: #e85826;
     color:#00970F;
     width:${props=>props.width?props.width:"200px"};
-    border-radius:${props=>props.borderRadius?props.borderRadius : 10}px;
+    border-radius:${props=>props.borderRadius?props.borderRadius : 7}px;
     border:none;
     font-size:15px;
     cursor: pointer;

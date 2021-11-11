@@ -14,17 +14,25 @@ import StyledCheckbox from "../../../Components/CheckBox/CheckBox";
 import { loginAction } from "../../../Redux/User/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { addCartItem } from "../../../Redux/Cart/cartActions";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 
 export default function SignIn() {
   const dispatch = useDispatch();
   const history = useHistory();
   // const user = useSelector((store) => store.user);
   const handleSaveChanges = async (values) => {
-    dispatch(addCartItem());
+    dispatch(loginAction(values));
   };
   const [state, setstate] = useState(false);
+  const responseGoogle = (response) => {
+    // console.log(response);
+  };
 
+  const responseFacebook = (response) => {
+  };
+
+  const componentClicked = (Data) => {};
   // function handleChange (setstate(true))
   // console.log(state);
 
@@ -42,7 +50,9 @@ export default function SignIn() {
       }}
     >
       {/* {!(user.isSucesss)&&<p>somevndkkjk</p>} */}
-      <Typography fontWeight={"bold"} style={{fontSize:"25px"}}>تسجيل الدخول </Typography>
+      <Typography fontWeight={"bold"} style={{ fontSize: "25px" }}>
+        تسجيل الدخول{" "}
+      </Typography>
 
       <LoginBox>
         <Formik
@@ -65,7 +75,11 @@ export default function SignIn() {
                   flexDirection: "column",
                 }}
               >
-                <Input name={"email"} type={"email"} placeholder={"البريد الإلكتروني"} />
+                <Input
+                  name={"email"}
+                  type={"email"}
+                  placeholder={"البريد الإلكتروني"}
+                />
                 {errors.email && touched.email ? (
                   <ErrorMessage>{errors.email}</ErrorMessage>
                 ) : null}
@@ -81,16 +95,23 @@ export default function SignIn() {
 
                 <FlexBox
                   style={{
-                    justifyContent: "space-between",
-                    alignItems: "start",
+                    justifyContent: "end",
+                    alignItems: "end",
                   }}
-                ></FlexBox>
+                >
+                  <Typography>نسيت كلمة المرور؟</Typography>
+                </FlexBox>
 
                 <Button
                   width={"100%"}
                   borderRadius={6}
                   text="سجل دخول"
-                  style={{ padding: "10px 0", color: "#fff", margin: "20px 0" }}
+                  style={{
+                    padding: "10px 0",
+                    color: "#fff",
+                    margin: "20px 0",
+                    fontWeight: "bold",
+                  }}
                 />
               </Form>
             );
@@ -106,6 +127,24 @@ export default function SignIn() {
             سجل الآن
           </Link>
         </Typography>
+      </FlexBox>
+      <FlexBox style={{ marginTop: "20px" }}>
+        <GoogleLogin
+          clientId="912842111923-o393s80gct341rosouqt43qf87u36pc7.apps.googleusercontent.com"
+          buttonText="تسجيل دخول باستخدام جوجل "
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
+        <FacebookLogin
+          appId="596227904945477"
+          autoLoad={true}
+          fields="name,email,picture"
+          onClick={componentClicked}
+          callback={responseFacebook}
+          textButton={"تسجيل دخول باستخدام فيسبوك"}
+          style={{ color: "red" }}
+        />
       </FlexBox>
     </LoginContainer>
   );

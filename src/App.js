@@ -15,43 +15,38 @@ import ScrollBar from "./Components/ScrollBar/ScrollBar";
 import MenuScreen from "./Screens/MenuScreen/MenuScreen";
 import Cart from "./Components/Cart/Cart";
 
+
 function App(props) {
   const isuser = useSelector((state) => state);
-  console.log("isssdddddd", Object.entries( isuser?.user?.email).length);
+  console.log("isssdddddd", Object.entries(isuser?.user?.email).length);
   return (
     <MainContainer>
       <NavBar />
-      {/* <MenuScreen/> */}
 
-      {/* <ScrollBar /> */}
-
-      {/* <Cards image={CardImage}  text={"Spinach Corn Sandwich"}  price={"$15"} /> */}
-      <Switch>
-      <Route key={1} exact={true} path={"/"} component={MenuScreen} />
-
-      <Route key={1} exact={true} path={"/cart"} component={Cart} /> {/* new line*/ }
-
-
-        {(Object.entries( isuser?.user?.email).length)!==0 ? (
+      {/* <Switch>
+        <Route key={1} exact={true} path={"/"} component={MenuScreen} />
+        <Route key={1} exact={true} path={"/cart"} component={Cart} />{" "}
+        {/* new line*/}
+        {Object.entries(isuser?.user?.email).length !== 0 ? (
           <>
-                              {console.log("  login  success  ")}
+            {console.log("  login  success  ")}
 
-          <Route key={1} exact={true} path={"/"} component={MenuScreen} />
-          <Redirect to="/" />
-
+            <Route key={100} exact={true} path={"/"} component={MenuScreen} />
+            <Redirect to="/" />
           </>
         ) : (
           <>
-          <Redirect to="/login" />
-                    {console.log("not  login")}
-                 
-                    <Redirect to="/signin" />
+            <Redirect to="/login" />
+            {console.log("not  login")}
+
+            <Redirect to="/signin" />
 
             <Route key={1} exact={true} path={"/signin"} component={SignIn} />
-            <Route key={200} exact={true} path={"/signup"} component={SignUp} /> 
+            <Route key={200} exact={true} path={"/signup"} component={SignUp} />
           </>
         )}
-      </Switch>
+
+        
     </MainContainer>
   );
 }

@@ -38,7 +38,7 @@ export default function Category4() {
   ];
 
   return (
-    <InnerSection>
+    <InnerSection id="Category4" >
       <FlexRow>
         {Data.map((item) => {
           return (

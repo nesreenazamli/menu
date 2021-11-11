@@ -7,7 +7,7 @@ export const MainContainer = styled("main")`
   align-items: start;
   width: 100%;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
 `;
 
 export const Typography = styled("p")`
@@ -24,7 +24,7 @@ export const FlexBox = styled("div")`
   background: ${(props) => props.color};
 
   @media screen and (max-width: 1100px) {
-    width: auto
+    width: auto;
   }
 `;
 
@@ -73,6 +73,6 @@ export const SpinnerContainer = styled.div`
 `;
 
 export const Line = styled("hr")`
- background-color: red;
- height: 60px;
+  background-color: red;
+  height: 60px;
 `;

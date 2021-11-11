@@ -35,10 +35,22 @@ export default function Category() {
         title: "بيتزا خضار",
         price: "$25",
       },
+      {
+        id: "6",
+        image: CardImage,
+        title: "بيتزا خضار",
+        price: "$25",
+      },
+      {
+        id: "7",
+        image: CardImage,
+        title: "بيتزا خضار",
+        price: "$25",
+      },
   ];
 
   return (
-    <InnerSection>
+    <InnerSection id="Category1" style={{marginTop:"90px"}} >
       <FlexRow>
         {Data.map((item) => {
           return (

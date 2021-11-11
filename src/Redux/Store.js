@@ -20,9 +20,7 @@ const initialState = {
   user: {
     email
   },
-  cart: {
-    cart: cartFromLocalStorage,
-  },
+  cart:cartFromLocalStorage,
 }; 
 
 const middlewares = [thunk];

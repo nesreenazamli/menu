@@ -44,7 +44,6 @@ const history = useHistory();
     // <h1>hi</h1>
     <InnerSection>
       <ScrollBar />
-      <Meals />
       <Category />
       <Category2 />
       <Category3 />
@@ -53,6 +52,7 @@ const history = useHistory();
       <Category6 />
       <Category7 />
       <Category8 />
+      <Meals />
     </InnerSection>
   );
 }

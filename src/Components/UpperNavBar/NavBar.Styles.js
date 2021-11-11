@@ -6,12 +6,16 @@ export const LogoImg = styled("img")`
   margin-top: 10px;
   min-width: 30px;
   min-height: 30px;
+  cursor: pointer;
+  
 `;
 
 export const NavText = styled(Link)`
-  padding-right: 40px;
+  padding: 4px 9px;
   margin-top: 10px;
   color: #000;
+  border: 1px solid #e85826;
+  border-radius: 7px;
 
   &:hover {
     color: #e85826;
@@ -21,9 +25,11 @@ export const NavText = styled(Link)`
 `;
 export const NavContainer = styled(FlexRow)`
   justify-content: space-between;
+  /* position: fixed; */
 
   @media screen and (max-width: 800px) {
     width: 95%;
     margin: auto;
+    position: fixed;
   } ;
 `;
