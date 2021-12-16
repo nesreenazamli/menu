@@ -65,17 +65,31 @@ code {
   padding: 4px 20px;
   color: #fff;
 }
-.kep-login-facebook.metro{
-    padding: 11px 13px !important;
-    margin-right: 10px !important;
-    background-color: none ;
-   box-shadow:rgb(0 0 0 / 24%) 0px 2px 2px 0px !important;
-   border-radius: 2px !important;
-   font-weight: 400 !important;
+.kep-login-facebook.metro {
+  padding: 11px 13px !important;
+  margin-right: 10px !important;
+  background-color: none;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px !important;
+  border-radius: 2px !important;
+  font-weight: 400 !important;
 }
-.C-pointer{
+.C-pointer {
   cursor: pointer;
 }
-.pos{
+.pos {
   position: fixed;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: brown;
+}
+.bg4 {
+  background-color: burlywood;
+}
+.bg5 {
+  background-color: cadetblue;
+}
+.bg6 {
+  background-color: cornflowerblue;
 }

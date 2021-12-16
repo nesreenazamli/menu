@@ -23,7 +23,7 @@ function App(props) {
     <MainContainer>
       <NavBar />
 
-      {/* <Switch>
+      <Switch>
         <Route key={1} exact={true} path={"/"} component={MenuScreen} />
         <Route key={1} exact={true} path={"/cart"} component={Cart} />{" "}
         {/* new line*/}
@@ -45,8 +45,7 @@ function App(props) {
             <Route key={200} exact={true} path={"/signup"} component={SignUp} />
           </>
         )}
-
-        
+      </Switch>
     </MainContainer>
   );
 }
